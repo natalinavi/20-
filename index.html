@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Идей контента — Недвижимость в Крыму</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  /* Фоны */
+  --bg-deep:    #040A1A;
+  --bg-mid:     #060F22;
+  --bg-card:    rgba(21,27,35,0.68);
+  --bg-card-h:  rgba(21,27,35,0.85);
+  --border:     rgba(38,49,64,0.9);
+  --border-hi:  rgba(196,152,60,0.35);
+
+  /* Бронза */
+  --br-dim:   #9A7A3A;
+  --br-mid:   #C4983C;
+  --br-main:  #DDB84E;
+  --br-light: #EDD898;
+
+  /* Текст */
+  --tx-hi:   #F3EFE8;
+  --tx-mid:  #AEB7C2;
+  --tx-dim:  #7F8996;
+  --tx-mute: #4A5568;
+
+  /* Тёплый */
+  --warm-1:  #C8B49A;
+  --warm-2:  #D7C1A3;
+  --warm-3:  #C8A872;
+
+  /* Кнопка */
+  --btn-bg-from: #E7DDD1;
+  --btn-bg-to:   #D4C6B0;
+  --btn-tx:      #14181D;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(196,152,60,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,152,60,.05) 0%, transparent 55%);
+  font-family: 'Inter', sans-serif;
+  color: var(--tx-mid);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 90px 48px 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% -20%, rgba(196,152,60,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-noise {
+  position: absolute; inset: 0; pointer-events: none; opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+.hero-tag {
+  display: inline-block;
+  border: 1px solid var(--border-hi);
+  background: rgba(196,152,60,.08);
+  color: var(--br-mid);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  padding: 5px 20px; border-radius: 50px;
+  margin-bottom: 32px;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5.5vw, 68px);
+  font-weight: 700; color: var(--tx-hi);
+  line-height: 1.12; letter-spacing: -.5px;
+  max-width: 860px; margin: 0 auto 22px;
+}
+.hero h1 em {
+  font-style: italic; color: var(--br-main);
+}
+.hero-sub {
+  font-size: 15px; font-weight: 300;
+  color: var(--tx-dim); line-height: 1.75;
+  max-width: 520px; margin: 0 auto 44px;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+}
+.hero-stat {
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--tx-mid);
+  font-size: 12px; font-weight: 500;
+  padding: 7px 18px; border-radius: 50px;
+  letter-spacing: .3px;
+}
+.hero-stat b { color: var(--br-light); font-weight: 700; }
+
+/* ── FILTERS ── */
+.filters-wrap {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(4,10,26,.88);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  padding: 13px 48px;
+  display: flex; gap: 7px; flex-wrap: wrap; justify-content: center;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--tx-dim);
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px; font-weight: 500;
+  padding: 6px 16px; border-radius: 50px;
+  cursor: pointer; transition: all .2s;
+  letter-spacing: .4px; white-space: nowrap;
+}
+.filter-btn:hover {
+  border-color: var(--border-hi);
+  color: var(--warm-3);
+}
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--btn-bg-from), var(--btn-bg-to));
+  border-color: transparent;
+  color: var(--btn-tx);
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(196,152,60,.25);
+}
+
+/* ── COUNTER ── */
+.counter-bar {
+  text-align: center; padding: 20px 48px 2px;
+  font-size: 11px; color: var(--tx-mute);
+  letter-spacing: 1.2px; text-transform: uppercase;
+}
+#counter-num { color: var(--br-main); font-weight: 700; }
+
+/* ── GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 18px;
+  padding: 24px 48px 72px;
+  max-width: 1440px; margin: 0 auto;
+}
+
+/* ── CARD ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .22s, box-shadow .22s, border-color .22s, background .22s;
+  backdrop-filter: blur(8px);
+}
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-h);
+  border-color: var(--border-hi);
+  box-shadow: 0 20px 56px rgba(0,0,0,.5), 0 0 0 1px rgba(196,152,60,.12);
+}
+.card.hidden { display: none; }
+
+.card-top-line {
+  height: 2px; width: 100%;
+  background: linear-gradient(90deg, var(--accent, var(--br-mid)) 0%, transparent 70%);
+  flex-shrink: 0;
+}
+
+.card-body { padding: 22px 22px 16px; flex: 1; display: flex; flex-direction: column; }
+
+.card-meta {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 10px; margin-bottom: 14px;
+}
+.card-patterns { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; }
+.pat-badge {
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: .9px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 50px;
+}
+.card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px; font-weight: 700;
+  color: var(--br-mid); opacity: .45;
+  line-height: 1; flex-shrink: 0;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18.5px; font-weight: 700;
+  color: var(--tx-hi); line-height: 1.35;
+  margin-bottom: 11px;
+  transition: color .2s;
+}
+.card:hover .card-title { color: var(--warm-2); }
+
+.card-rule {
+  width: 28px; height: 1.5px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent, var(--br-mid)), transparent);
+  margin-bottom: 13px;
+}
+
+.card-desc {
+  font-size: 12.5px; color: var(--tx-dim);
+  line-height: 1.72; margin-bottom: 16px; flex: 1;
+}
+
+/* ── EXPAND ── */
+.expand-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-size: 11.5px; font-weight: 600;
+  color: var(--warm-3); padding: 0;
+  display: flex; align-items: center; gap: 5px;
+  margin-bottom: 10px; transition: color .2s; letter-spacing: .3px;
+}
+.expand-btn:hover { color: var(--br-light); }
+.expand-btn .arrow { transition: transform .25s; font-style: normal; display: inline-block; }
+.expand-btn.open .arrow { transform: rotate(90deg); }
+
+.reveal-list {
+  max-height: 0; overflow: hidden;
+  transition: max-height .38s ease, opacity .28s;
+  opacity: 0;
+}
+.reveal-list.open { max-height: 320px; opacity: 1; }
+.reveal-list ul { list-style: none; padding: 0 0 6px; }
+.reveal-list ul li {
+  font-size: 12px; color: var(--tx-mid); line-height: 1.65;
+  padding: 5px 0; border-bottom: 1px solid rgba(38,49,64,.7);
+  display: flex; align-items: flex-start; gap: 9px;
+}
+.reveal-list ul li:last-child { border-bottom: none; }
+.reveal-list ul li::before {
+  content: '›'; color: var(--br-mid); font-size: 14px;
+  font-weight: 700; flex-shrink: 0; line-height: 1.5;
+}
+
+/* ── CARD FOOTER ── */
+.card-footer {
+  padding: 12px 22px 16px;
+  border-top: 1px solid rgba(38,49,64,.7);
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+.aud-tag {
+  font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 50px;
+  background: rgba(196,152,60,.08); border: 1px solid rgba(196,152,60,.2);
+  color: var(--warm-3); letter-spacing: .2px; white-space: nowrap;
+}
+
+/* ── PATTERN BADGE THEMES ── */
+.pat-arch  { background: rgba(196,152,60,.18);  color: #EDD898; border: 1px solid rgba(221,184,78,.2); }
+.pat-anal  { background: rgba(94,179,214,.15);  color: #8dd0ea; border: 1px solid rgba(94,179,214,.2); }
+.pat-prac  { background: rgba(76,175,80,.15);   color: #81c784; border: 1px solid rgba(76,175,80,.2); }
+.pat-retr  { background: rgba(171,71,188,.15);  color: #ce93d8; border: 1px solid rgba(171,71,188,.2); }
+.pat-inno  { background: rgba(255,112,67,.15);  color: #ffab91; border: 1px solid rgba(255,112,67,.2); }
+.pat-cult  { background: rgba(38,166,154,.15);  color: #80cbc4; border: 1px solid rgba(38,166,154,.2); }
+.pat-trend { background: rgba(236,64,122,.15);  color: #f48fb1; border: 1px solid rgba(236,64,122,.2); }
+.pat-acad  { background: rgba(92,107,192,.15);  color: #9fa8da; border: 1px solid rgba(92,107,192,.2); }
+.pat-geo   { background: rgba(102,187,106,.15); color: #a5d6a7; border: 1px solid rgba(102,187,106,.2); }
+.pat-iron  { background: rgba(255,167,38,.15);  color: #ffcc80; border: 1px solid rgba(255,167,38,.2); }
+.pat-cons  { background: rgba(141,110,99,.18);  color: #bcaaa4; border: 1px solid rgba(141,110,99,.2); }
+
+/* ── FOOTER ── */
+.page-footer {
+  text-align: center; padding: 28px 48px;
+  font-size: 11px; color: var(--tx-mute);
+  letter-spacing: .8px; text-transform: uppercase;
+  border-top: 1px solid var(--border);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .grid { padding: 24px 24px 60px; }
+  .filters-wrap { padding: 13px 24px; }
+  .counter-bar { padding: 18px 24px 2px; }
+}
+@media (max-width: 760px) {
+  .hero { padding: 56px 20px 48px; }
+  .hero h1 { letter-spacing: -.2px; }
+  .grid { grid-template-columns: 1fr; padding: 16px 16px 48px; gap: 14px; }
+  .filters-wrap { padding: 10px 12px; gap: 5px; }
+  .filter-btn { font-size: 11px; padding: 5px 13px; }
+  .counter-bar { padding: 14px 16px 2px; font-size: 10px; }
+  .page-footer { padding: 22px 16px; }
+}
+
+/* ── FADE IN ANIMATION ── */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card { animation: cardIn .4s ease both; }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<div class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-tag">Контент-стратегия · Недвижимость в Крыму · 2025</div>
+  <h1>20 оригинальных идей<br>для <em>контента</em></h1>
+  <p class="hero-sub">Темы для Telegram-канала, видео и статей. Выбирайте по типу аудитории — фильтр работает сразу.</p>
+  <div class="hero-stats">
+    <span class="hero-stat"><b>20</b> тем</span>
+    <span class="hero-stat"><b>7</b> типов аудитории</span>
+    <span class="hero-stat"><b>11</b> паттернов</span>
+    <span class="hero-stat">Telegram · Видео · Статьи</span>
+  </div>
+</div>
+
+<!-- ══ FILTERS ══ -->
+<div class="filters-wrap">
+  <button class="filter-btn active" data-filter="all">Все темы</button>
+  <button class="filter-btn" data-filter="бизнесовая">Бизнесовая</button>
+  <button class="filter-btn" data-filter="профессиональная">Профессиональная</button>
+  <button class="filter-btn" data-filter="интеллигентная">Интеллигентная</button>
+  <button class="filter-btn" data-filter="молодёжная">Молодёжная</button>
+  <button class="filter-btn" data-filter="инсайдерская">Инсайдерская</button>
+  <button class="filter-btn" data-filter="клиентская">Клиентская</button>
+  <button class="filter-btn" data-filter="любительская">Любительская</button>
+</div>
+
+<div class="counter-bar">Показано <span id="counter-num">20</span> из 20 тем</div>
+
+<!-- ══ GRID ══ -->
+<div class="grid" id="grid"></div>
+
+<div class="page-footer">Недвижимость в Крыму · Контентная стратегия 2025</div>
+
+<script>
+const IDEAS = [
+  {
+    id: 1,
+    title: "Крымская недвижимость как членство в идеологии: социальный капитал вместо квадратуры",
+    patterns: [["Архетипичный","pat-arch"],["Аналитический","pat-anal"]],
+    accent: "#C4983C",
+    audiences: ["интеллигентная","бизнесовая","профессиональная"],
+    desc: "Покупка дома в Крыму — это не просто покупка объекта, а выбор быть частью определённого сообщества с культурными и идентификационными убеждениями. Цена зависит от того, какую историю о себе рассказывает район.",
+    reveal: ["Как выбор районов отражает идеологическую позицию","Какие кварталы притягивают русскоязычных креативщиков, а какие — консервативный бизнес","Почему инвестор скупает районы не только под доход, но под историю"]
+  },
+  {
+    id: 2,
+    title: "Архитектурная генетика Крыма: почему советские панельки живут дольше коттеджей-самостроек",
+    patterns: [["Практический","pat-prac"],["Академический","pat-acad"]],
+    accent: "#4caf50",
+    audiences: ["профессиональная","клиентская"],
+    desc: "Непредвзятый анализ несущих конструкций советского строительства vs. постсоветского коттеджного слёта. Физика, а не ностальгия.",
+    reveal: ["Почему стандартная панель К-7 выдержит землетрясение лучше монолита с большими окнами","Как читать заключение геолога и на что оно реально влияет","Технико-экономический расчёт: дешевизна самостроя vs. стоимость переремонта через 15 лет"]
+  },
+  {
+    id: 3,
+    title: "Невидимое землетрясение: политический риск встроен в каждый квадратный метр",
+    patterns: [["Аналитический","pat-anal"],["Ироничный","pat-iron"]],
+    accent: "#DDB84E",
+    audiences: ["бизнесовая","инсайдерская","профессиональная"],
+    desc: "Как неопределённость геополитического статуса Крыма встраивается в ценообразование. Какой дисконт закладывают трейдеры. Как это влияет на кредиты, страховку, переводы.",
+    reveal: ["Как банки калькулируют процент риска при кредитовании","Что случается с недвижимостью при смене политического статуса — кейсы других конфликтных территорий","Почему иностранцы почти не покупают — и это не только про санкции","Скрытые страховки: что реально закладывают в цену трейдеры"]
+  },
+  {
+    id: 4,
+    title: "Лабиринт разрешений: как бюрократия Крыма отличается от материка",
+    patterns: [["Практический","pat-prac"],["Ретроспективный","pat-retr"]],
+    accent: "#4caf50",
+    audiences: ["клиентская","профессиональная","молодёжная"],
+    desc: "Документальное расследование: как получить разрешение на строительство, реконструкцию или регистрацию в Крыму. Чем это отличается от московского механизма. На каких этапах теряют деньги.",
+    reveal: ["Карта инстанций, которые нужно обойти","Реальные сроки vs. официальные сроки","Какие советские документы всё ещё влияют на современное право","История одного объекта: от идеи до регистрации — с датами и цифрами"]
+  },
+  {
+    id: 5,
+    title: "Недвижимость как зеркало психики: какой дом выбирает какой тип мышления",
+    patterns: [["Архетипичный","pat-arch"],["Культурный","pat-cult"]],
+    accent: "#C4983C",
+    audiences: ["интеллигентная","любительская","бизнесовая"],
+    desc: "Не психологический нарратив, а семиотический анализ. Какие архетипы личности привлекают какие типы объектов. Минимализм vs. максимум удобств — это выбор, а не вкус.",
+    reveal: ["Как выбор размера комнаты связан с типом нервной системы","Почему одни покупают историю, другие — функциональность","Анализ: что выбирает инвестор, что — жилец, что — романтик","Почему некоторые 10 лет не могут купить, хотя могут позволить"]
+  },
+  {
+    id: 6,
+    title: "Миграционные слои Крыма: как каждая волна переселенцев оставляет отпечаток в цене",
+    patterns: [["Ретроспективный","pat-retr"],["Аналитический","pat-anal"]],
+    accent: "#ab47bc",
+    audiences: ["интеллигентная","профессиональная","любительская"],
+    desc: "Историческое расслоение: татары 1990-х, украинские бизнесмены нулевых, русские мигранты 2010-х. Каждая группа меняла локации под себя, повышая или понижая статус района.",
+    reveal: ["Карта миграций: откуда приезжали, где селились, куда двигались","Как национальные сообщества формировали микроэкономику локаций","Почему некоторые районы остаются замкнутыми кварталами","Следы в архитектуре: что каждая волна оставила в интерьере и благоустройстве"]
+  },
+  {
+    id: 7,
+    title: "Второй рынок: теневая экономика в недвижимости (доверенные лица, задолженность, перепродажи)",
+    patterns: [["Инновационный","pat-inno"],["Аналитический","pat-anal"]],
+    accent: "#ff7043",
+    audiences: ["инсайдерская","бизнесовая","профессиональная"],
+    desc: "Откровенный разговор про то, что происходит вне официальных объявлений. Как работают теневые риэлторы. Почему часть рынка невидима в статистике.",
+    reveal: ["Как работает скупка долгов и что происходит после","Механизм подставных лиц и его риски","Сколько реально идёт через чёрный нал","Почему цены в объявлениях не совпадают с реальными на 15–20%"]
+  },
+  {
+    id: 8,
+    title: "Климатическая переоценка: как глобальное потепление переставляет фишки на доске",
+    patterns: [["Инновационный","pat-inno"],["Трендовый","pat-trend"]],
+    accent: "#ff7043",
+    audiences: ["молодёжная","бизнесовая","интеллигентная"],
+    desc: "Не философия, а твёрдые прогнозы климатологов. Как изменение климата в Крыму перераспределит спрос: горные локации vs. берег, водоёмы vs. засуха.",
+    reveal: ["Карта климатических изменений Крыма на 10, 20, 50 лет","Какие районы выиграют в стоимости, какие проиграют","Как переоценивается вода, энергия, охлаждение в цене недвижимости","Кейсы Португалии, Испании, Греции: как они переживали переоценку"]
+  },
+  {
+    id: 9,
+    title: "Профессия «коллектор недвижимости»: кто скупает чужие долги и как это реформирует рынок",
+    patterns: [["Практический","pat-prac"],["Аналитический","pat-anal"]],
+    accent: "#4caf50",
+    audiences: ["бизнесовая","инсайдерская","профессиональная"],
+    desc: "Портретное исследование крупных скупщиков задолженностей по недвижимости в Крыму. Как они находят, покупают, переструктурируют, продают. Как это влияет на ценообразование.",
+    reveal: ["Портреты 3–5 крупных коллекторов: откуда, как работают, что скупают","Экономика: за сколько скупают долги, за сколько продают через 2–3 года","Как это влияет на доступность жилья для обычного человека","Легальность vs. реальность: что на бумаге, что в жизни"]
+  },
+  {
+    id: 10,
+    title: "Экспансия с Востока: как казахские, азербайджанские, белорусские фонды скупают Крым",
+    patterns: [["Аналитический","pat-anal"],["Географический","pat-geo"]],
+    accent: "#DDB84E",
+    audiences: ["бизнесовая","профессиональная","инсайдерская"],
+    desc: "Исследование больших денег из стран СНГ. Какие фонды активны, сколько денег, какие стратегии: жилой квартал, отельный комплекс, сельхоз-земля.",
+    reveal: ["Карта инвесторов: откуда приходят крупные деньги","Какие типы объектов скупают нерезиденты","Как это влияет на цены и доступность для локального населения","Прогноз: куда направятся следующие волны инвестиций"]
+  },
+  {
+    id: 11,
+    title: "Молчаливое большинство: невидимые собственники и культура секретности в Крыму",
+    patterns: [["Инновационный","pat-inno"],["Архетипичный","pat-arch"]],
+    accent: "#ff7043",
+    audiences: ["интеллигентная","инсайдерская","любительская"],
+    desc: "Социологическое исследование мотивов: почему люди скрывают свою недвижимость. Психология молчания — как это влияет на статистику рынка.",
+    reveal: ["Интервью с людьми, которые предпочитают не светиться","Культурные причины: история, гендерные роли, политика","Как это искажает представление о реальном спросе","Что скрывается в закрытых чатах риэлторов"]
+  },
+  {
+    id: 12,
+    title: "Язык дома: как коммуникативная функция превалирует над утилитарной",
+    patterns: [["Культурный","pat-cult"],["Архетипичный","pat-arch"]],
+    accent: "#26a69a",
+    audiences: ["интеллигентная","молодёжная","любительская"],
+    desc: "Дом как высказывание. Что говорит о человеке выбор района, архитектуры, интерьера. Стоимость на 40–50% определяется смыслом, который дом несёт.",
+    reveal: ["Декодирование: что означает каждый район в глазах крымского общества","Как классический модерн говорит одно, а евроремонт — другое","История архитектурных стилей: какие были модны, что они отражали","Гид для амбициозного: как выбирать дом как высказывание о себе"]
+  },
+  {
+    id: 13,
+    title: "Город-полнолуние и город-новолуние: двойная жизнь крымских локаций",
+    patterns: [["Географический","pat-geo"],["Ироничный","pat-iron"]],
+    accent: "#66bb6a",
+    audiences: ["молодёжная","любительская","клиентская"],
+    desc: "Контраст между тем, как выглядит город летом (туристический сезон) и как функционирует в остальные месяцы. Как это влияет на выбор района, цены аренды, качество жизни.",
+    reveal: ["Портреты одного района летом и зимой","Как туризм искажает цены на жильё","Почему некоторые районы живут только в высокий сезон","Сколько зарабатывается за 3 месяца vs. расходы на содержание 9 месяцев","Совет: где жить, если ты местный, а не турист"]
+  },
+  {
+    id: 14,
+    title: "Специализированные микроэкосистемы: как творческие, деловые и научные сообщества создают разный спрос",
+    patterns: [["Аналитический","pat-anal"],["Практический","pat-prac"]],
+    accent: "#DDB84E",
+    audiences: ["молодёжная","бизнесовая","профессиональная","интеллигентная"],
+    desc: "Некоторые районы притягивают стартаперов и фрилансеров, другие — консервативный бизнес, третьи — академический контингент. Как экосистема формирует спрос и цены.",
+    reveal: ["Карта субкультур: где кластеры художников, юристов, инженеров","Как сообщество формирует цены и недвижимость","Почему стартап-хабы дорожают быстрее","Какой район для какого типа профессии или образа жизни"]
+  },
+  {
+    id: 15,
+    title: "Явление пустого дома: недвижимость как сбережение (аренда никому и ничему)",
+    patterns: [["Аналитический","pat-anal"],["Культурный","pat-cult"]],
+    accent: "#DDB84E",
+    audiences: ["интеллигентная","бизнесовая","инсайдерская"],
+    desc: "Феномен квартир, которые годами стоят пустые. Это не убыток — это форма хранения капитала. Почему инвестор предпочитает потери аренды стабильности и контролю.",
+    reveal: ["Статистика: сколько квартир в Крыму пусто (оценка)","Экономика пустоты: налоги vs. риск арендатора","Психология: почему человек предпочитает ноль аренды потенциальным рискам","Прогноз: как это влияет на долгосрочную доступность жилья"]
+  },
+  {
+    id: 16,
+    title: "Реставрация как инвестиция: когда старый дом дороже нового",
+    patterns: [["Консервативный","pat-cons"],["Практический","pat-prac"]],
+    accent: "#8d6e63",
+    audiences: ["клиентская","профессиональная","интеллигентная"],
+    desc: "Когда дом 1890-х или 1950-х после реставрации стоит дороже новостроя. Что в этом экономика, что — редкость, что — культурный капитал.",
+    reveal: ["Примеры домов, которые выросли в цене после реставрации","Анализ: материалы, мастерство, уникальность vs. новое и типовое","Как исторические особняки переходят в инвестиционный класс","На что смотреть при покупке старого дома для реставрации"]
+  },
+  {
+    id: 17,
+    title: "Акустическая география: цена тишины vs. цена шума",
+    patterns: [["Практический","pat-prac"],["Географический","pat-geo"]],
+    accent: "#4caf50",
+    audiences: ["клиентская","любительская","молодёжная"],
+    desc: "Карта шумных и тихих локаций. Как проходят маршруты транспорта, где военные объекты, ночные клубы, аэропорт. Как это встраивается в цены.",
+    reveal: ["Карта звукового ландшафта Крыма: слои шума","Как шум влияет на здоровье и стоимость недвижимости","Интервью жителей: как адаптировались к шуму","Совет: как найти тихое место в городе"]
+  },
+  {
+    id: 18,
+    title: "Женский взгляд: как гендерная перспектива меняет критерии выбора и цены",
+    patterns: [["Культурный","pat-cult"],["Аналитический","pat-anal"]],
+    accent: "#26a69a",
+    audiences: ["молодёжная","интеллигентная","любительская","бизнесовая"],
+    desc: "Как гендерные опасения (безопасность, одиночество, социальная граница) встраиваются в выбор локации. Большинство аналитики написано через мужской взгляд — это инверсия.",
+    reveal: ["Портреты разных женских сегментов покупателей","Какие районы считаются безопасными и почему","Как структура дома (видимость, соседство, выход) волнует женщину иначе","Как правильно позиционировать объект для женского спроса"]
+  },
+  {
+    id: 19,
+    title: "Недвижимость как источник истории: как анализ объявлений рассказывает о времени",
+    patterns: [["Ретроспективный","pat-retr"],["Академический","pat-acad"]],
+    accent: "#ab47bc",
+    audiences: ["интеллигентная","молодёжная","любительская"],
+    desc: "Текстологический анализ: как менялись описания объектов за 10–15 лет. О чём упоминали в 2010-х, о чём молчат сейчас. Язык объявлений как зеркало культурных изменений.",
+    reveal: ["Анализ архива объявлений: как менялись описания","Смена лексики: «евроремонт» — было трендово, теперь звучит устаревше","Что исчезло из объявлений (инфо про соседство, безопасность) и почему","Как читать объявления как исторический документ"]
+  },
+  {
+    id: 20,
+    title: "Блокчейн и NFT: как криптотехнологии переопределяют понятие собственности в недвижимости",
+    patterns: [["Инновационный","pat-inno"],["Трендовый","pat-trend"]],
+    accent: "#ff7043",
+    audiences: ["молодёжная","бизнесовая","профессиональная"],
+    desc: "Не гайд по NFT, а анализ: как новые технологии меняют представление о собственности, праве, о том, что значит «владеть». Крым как возможная лаборатория.",
+    reveal: ["Как блокчейн может решить проблему регистрации прав (особенно в неясных территориях)","Что такое fractional ownership и как это работает","Кейсы: ОАЭ, Гвинея, Грузия — реальные примеры токенизации","Прогноз: станет ли токенизированная недвижимость стандартом в Крыму"]
+  }
+];
+
+function renderCards() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  IDEAS.forEach((idea, idx) => {
+    const numStr = String(idea.id).padStart(2, '0');
+    const patternsHtml = idea.patterns.map(([name, cls]) =>
+      `<span class="pat-badge ${cls}">${name}</span>`
+    ).join('');
+    const audHtml = idea.audiences.map(a =>
+      `<span class="aud-tag">${a.charAt(0).toUpperCase() + a.slice(1)}</span>`
+    ).join('');
+    const revealHtml = idea.reveal.map(r => `<li>${r}</li>`).join('');
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.audiences = idea.audiences.join(' ');
+    card.style.animationDelay = (idx * 0.04) + 's';
+    card.innerHTML = `
+      <div class="card-top-line" style="background:linear-gradient(90deg,${idea.accent} 0%,transparent 70%)"></div>
+      <div class="card-body">
+        <div class="card-meta">
+          <div class="card-patterns">${patternsHtml}</div>
+          <div class="card-num">${numStr}</div>
+        </div>
+        <div class="card-title">${idea.title}</div>
+        <div class="card-rule" style="background:linear-gradient(90deg,${idea.accent},transparent)"></div>
+        <div class="card-desc">${idea.desc}</div>
+        <button class="expand-btn" onclick="toggleReveal(this)">
+          <span class="arrow">›</span>&nbsp;Что раскрыть
+        </button>
+        <div class="reveal-list">
+          <ul>${revealHtml}</ul>
+        </div>
+      </div>
+      <div class="card-footer">${audHtml}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function toggleReveal(btn) {
+  const list = btn.nextElementSibling;
+  const isOpen = list.classList.contains('open');
+  list.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+
+let activeFilter = 'all';
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    activeFilter = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter();
+  });
+});
+
+function applyFilter() {
+  const cards = document.querySelectorAll('.card');
+  let visible = 0;
+  cards.forEach(card => {
+    const auds = card.dataset.audiences;
+    const show = activeFilter === 'all' || auds.includes(activeFilter);
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+  document.getElementById('counter-num').textContent = visible;
+}
+
+renderCards();
+applyFilter();
+</script>
+</body>
+</html>
